@@ -1,0 +1,113 @@
+
+
+<app-cmusuarios [idUsuario]="idUsuario" *ngIf="mostrarActualizar"></app-cmusuarios>
+
+<h3 class="display-4 text-center mb-3 text-success" *ngIf="mostrarRegistrar">Nuevo usuario <small><i class="fas fa-user-plus"></i></small></h3>
+
+<hr *ngIf="mostrarRegistrar">
+
+
+<div *ngIf="mostrarRegistrar">
+    <form autocomplete="off" (ngSubmit)="altauser(forma)" #forma="ngForm">
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label text-center font-weight-bold" for="nombre">Nombre:</label>
+            <div class="col-9">
+                <input class="form-control" type="text" placeholder="Nombre" id=" validationServer01"
+                    [(ngModel)]="usu.nombre" name="nombre" #nombre="ngModel" required>
+                <div class="invalid-feedback">
+
+                    El nombre es necesario.
+
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label text-center font-weight-bold" for="password">Contraseña:</label>
+            <div class="col-9">
+                <input class="form-control" type="password" placeholder="Contraseña" id=" validationServer02"
+                    name="password" [(ngModel)]="usu.password" #password="ngModel" required>
+
+                <div class="invalid-feedback">
+
+                    La contraseña es necesario.
+
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label text-center font-weight-bold" for="email">Email:</label>
+            <div class="col-9">
+                <input class="form-control" type="email" placeholder="Email" id=" validationServer03" name="email"
+                    [(ngModel)]="usu.email" #email="ngModel" required>
+            </div>
+        </div>
+        <p></p>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label text-center font-weight-bold" for="email">Tipo de usuario:</label>
+            <div class="col-9">
+                <select class="form-control" name="select"  [(ngModel)]="usu.tipo" >
+                    <option>
+                        Tipo 1
+                    </option>
+                    <option>
+                        Tipo 2
+                    </option>
+                    <option>
+                        Tipo 3
+                    </option>
+                </select>
+            </div>
+        </div>
+        
+        <p></p>
+        <button class="btn btn-outline-success btn-block pt-2" type="submit">Guardar usuario <i
+                class="fas fa-check-circle"></i></button>
+
+    </form>
+
+</div>
+
+<p></p>
+<h3 class="display-4 text-center mb-3 text-primary">Lista de usuarios <small><i class="fas fa-users"></i></small></h3>
+<hr>
+
+<button class="btn btn-outline-primary btn-block mb-3" (click)="mostrarAgregar()">Agregar nuevo usuario <i
+    class="fas fa-plus-square"></i></button>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center" scope="col">Nombre</th>
+            <th class="text-center" scope="col">Contraseña</th>
+            <th class="text-center" sope="col">Email</th>
+            <th class="text-center" sope="col">Tipo de Usuario</th>
+            <th class="text-center" sope="col">Modificar</th>
+            <th class="text-center" sope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.password | password}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.tipo}}</td>
+            
+            <td class="text-center"><button class="btn btn-outline-warning" (click)="actualizarID(usuario._id)">Modificar <i
+                        class="fas fa-exchange-alt"></i></button></td>
+            <td class="text-center"><button class="btn btn-outline-danger" (click)="eliminarID(usuario._id)">Eliminar <i
+                        class="fas fa-trash-alt"></i></button></td>
+
+
+            <!-- <td><button (click)="modificaruser(forma)">Modificar</button></td> -->
+        </tr>
+    </tbody>
+</table>
+

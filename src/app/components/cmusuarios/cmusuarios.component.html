@@ -1,0 +1,77 @@
+
+<h3 class="display-4 text-center mb-3 text-warning">Modificar usuario <small><i class="fas fa-user-cog"></i></small></h3>
+
+<hr>
+
+<form autocomplete="off" (ngSubmit)="modificaruser()" #forma="ngForm">
+
+    <p>
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="email">Nombre:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Nombre" id=" validationServer01"
+                [(ngModel)]="usuario.nombre" name="nombre" #nombre="ngModel" required>
+
+            <div class="invalid-feedback">
+
+                El nombre es necesario.
+
+            </div>
+        </div>
+    </div>
+
+    <p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="password">Contraseña:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Contraseña" id=" validationServer02" name="Contraseña"
+                [(ngModel)]="usuario.password" #password="ngModel" required>
+
+            <div class="invalid-feedback">
+
+                La contraseña es necesaria.
+
+            </div>
+        </div>
+    </div>
+
+    <p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="email">Email:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Email" id=" validationServer03" name="email"
+                [(ngModel)]="usuario.email" #email="ngModel" required>
+
+            <div class="invalid-feedback">
+
+                El email es necesario.
+
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="email">Tipo de usuario:</label>
+        <div class="col-9">
+            <select class="form-control" name="select"  [(ngModel)]="usu.tipo" >
+                <option>
+                    Tipo 1
+                </option>
+                <option>
+                    Tipo 2
+                </option>
+                <option>
+                    Tipo 3
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <p>
+
+    <p>
+        <button class="btn btn-outline-warning btn-block" type="submit">Actualizar usuario <i class="fas fa-sync-alt"></i></button>
+
+</form>

@@ -1,0 +1,22 @@
+<h1 id="title">AVENTON UTA</h1>
+
+<section class="form-login">
+    <div class="abs-center">
+        <div >
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="usuario.email" required >
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="usuario.password" required >
+            </div>
+          
+            <button type="submit" class="btn btn-primary" (click)="login(usuario)">Ingresar</button>
+          </form>
+        </div>
+    </div>
+</section>
+
