@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   }
   tipo : any; 
 
-
+memoria=0;
   constructor(private susuarios: SusuariosService, private rt: Router) { }
 
   ngOnInit(): void {
@@ -29,17 +29,19 @@ export class LoginComponent implements OnInit {
       console.log('token:',res.token);
       localStorage.setItem('token', res.token);
       this.tipo = res.usrDB.tipo;
+      let nombre = res.usrDB.nombre;
+      localStorage.setItem('nombre', nombre);
       console.log(this.tipo);
       
       if(this.tipo == 'Tipo 1') {
         this.rt.navigate(['/cusuarios'])
       }
       if(this.tipo == 'Tipo 2') {
-        localStorage.clear();
+
         this.rt.navigate(['/conductor'])
       }
       if(this.tipo == 'Tipo 3') {
-        localStorage.clear();
+    
         this.rt.navigate(['/usuario'])
       }
 
@@ -48,6 +50,10 @@ export class LoginComponent implements OnInit {
     }).catch(err =>{
       console.log(err.error);
       alert('Error al momento del login')
+      this.memoria++;
+      if(this.memoria == 3){
+        alert('Usuario bloqueado, intente dentro de 30 segundos');
+      }
     })
   }
 }

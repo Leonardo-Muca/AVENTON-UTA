@@ -1,0 +1,129 @@
+<form autocomplete="off" (ngSubmit)="altacon()" #forma="ngForm">
+    <h3 class="display-4 text-center mb-3 text-primary">Lista de Conductores <small><i class="fas fa-users"></i></small></h3>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="nombre">Nombre:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Nombre" id=" validationServer01"
+                [(ngModel)]="con.nombre" name="nombre" #nombre="ngModel" required>
+            <div class="invalid-feedback">
+
+                El nombre es necesario.
+
+            </div>
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="password">Contraseña:</label>
+        <div class="col-9">
+            <input class="form-control" type="password" placeholder="Contraseña" id=" validationServer02"
+                name="password" [(ngModel)]="con.password" #password="ngModel" required>
+
+            <div class="invalid-feedback">
+
+                La contraseña es necesario.
+
+            </div>
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="email">Email:</label>
+        <div class="col-9">
+            <input class="form-control" type="email" placeholder="Email" id=" validationServer03" name="email"
+                [(ngModel)]="con.email" #email="ngModel" required>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="email">Tipo de usuario:</label>
+        <div class="col-9">
+            <select class="form-control" name="select"  [(ngModel)]="con.tipo" >
+                <option>
+                    Tipo 1
+                </option>
+                <option>
+                    Tipo 2
+                </option>
+                <option>
+                    Tipo 3
+                </option>
+            </select>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="placas">Placas:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Placas" id=" validationServer03" name="placas"
+                [(ngModel)]="con.placas" #email="ngModel" required>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="modelo">Modelo:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Modelo" id=" validationServer03" name="modelo"
+                [(ngModel)]="con.modelo" #email="ngModel" required>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="celular">Celular:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="Celular" id=" validationServer03" name="celular"
+                [(ngModel)]="con.celular" #email="ngModel" required>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <label class="col-3 col-form-label text-center font-weight-bold" for="curp">CURP:</label>
+        <div class="col-9">
+            <input class="form-control" type="text" placeholder="CURP" id=" validationServer03" name="CURP"
+                [(ngModel)]="con.CURP" #email="ngModel" required>
+        </div>
+    </div>
+    <p></p>
+    <button class="btn btn-outline-success btn-block pt-2" type="submit">Guardar usuario <i
+            class="fas fa-check-circle"></i></button>
+
+</form>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center" scope="col">Nombre</th>
+            <th class="text-center" scope="col">Contraseña</th>
+            <th class="text-center" sope="col">Email</th>
+            <th class="text-center" sope="col">Tipo de Usuario</th>
+            <th class="text-center" sope="col">Placas</th>
+            <th class="text-center" sope="col">Modelo</th>
+            <th class="text-center" sope="col">Celular</th>
+            <th class="text-center" sope="col">CURP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let conductor of conductores">
+            <td>{{conductor.nombre}}</td>
+            <td>{{conductor.password | password}}</td>
+            <td>{{conductor.email}}</td>
+            <td>{{conductor.tipo}}</td>
+            <td>{{conductor.placas}}</td>
+            <td>{{conductor.modelo}}</td>
+            <td>{{conductor.celular}}</td>
+            <td>{{conductor.CURP}}</td>
+
+            <!-- <td><button (click)="modificaruser(forma)">Modificar</button></td> -->
+        </tr>
+    </tbody>
+</table>

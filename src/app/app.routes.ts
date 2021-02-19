@@ -4,6 +4,7 @@ import { CmusuariosComponent } from './components/cmusuarios/cmusuarios.componen
 import { LoginComponent } from '../app/login/login/login.component';
 import {ConductorComponent} from './components/conductor/conductor.component'
 import {UsuarioAventonComponent} from './components/usuario-aventon/usuario-aventon.component'
+import {ComponentsComponent} from '../app/altacon/components/components.component'
 import {AuthGuard} from './auth.guard';
 
 export const Router: Routes = [
@@ -13,6 +14,7 @@ export const Router: Routes = [
     { path: 'login', component: LoginComponent },
     {path: 'conductor', component: ConductorComponent },
     {path: 'usuario', component: UsuarioAventonComponent },
+    {path: 'conalt', component: ComponentsComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'clibros' }
 ]
 

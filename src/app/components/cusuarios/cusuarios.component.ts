@@ -23,7 +23,7 @@ export class CusuariosComponent implements OnInit {
     nombre: null,
     password: null,
     email: null,
-    tipo:null
+    tipo:null,
   }
 
   usuarios: any;
@@ -32,6 +32,8 @@ export class CusuariosComponent implements OnInit {
   mostrarRegistrar: Boolean = false;
 
   constructor(private susuarios: SusuariosService, private fB: FormBuilder) {
+    this.usu.nombre = localStorage.getItem('nombre');
+    console.log(this.usu)
   }
 
   ngOnInit(): void {

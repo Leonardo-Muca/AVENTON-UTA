@@ -1,1 +1,15 @@
-<p>usuario-aventon works!</p>
+<h1 style="text-align: center;">Bienvenido {{usu.nombre}}</h1>
+<button type="button" class="btn btn-primary" (click)="pedirViaje()">Pedir Viaje</button>
+<br>
+<div *ngIf="pedir == true">
+    <input class="form-control" type="text" placeholder="Origen" name="Destino" required>
+</div>
+<br>
+<div *ngIf="pedir == true">
+    <input class="form-control" type="text" placeholder="Destino"  name="nombre"  required>
+</div>
+<br>
+<div style="text-align: center;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.3376700881186!2d-102.29786578468155!3d21.883069163439277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ef5f7177ad93%3A0xee8d3c7c61099a88!2sCentro%20Aguascalientes!5e0!3m2!1ses!2smx!4v1612980476936!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    
+</div>

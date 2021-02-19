@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { CusuariosComponent } from './components/cusuarios/cusuarios.component';
 import { CmusuariosComponent } from './components/cmusuarios/cmusuarios.component';
 import { LoginComponent } from '../app/login/login/login.component';
+import {ComponentsComponent} from '../app/altacon/components/components.component'
 
  export const routes: Routes = [
   {path: '', redirectTo:'/login',pathMatch:'full'},
     { path: 'cusuarios', component: CusuariosComponent },
     { path: 'cmusuarios', component: CmusuariosComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'conalt', component: ComponentsComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'clibros' }
 ];
 

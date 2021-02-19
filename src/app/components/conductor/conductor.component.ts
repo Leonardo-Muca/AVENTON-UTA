@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conductor.component.css']
 })
 export class ConductorComponent implements OnInit {
-
-  constructor() { }
+con={
+nombre:null,
+email:null,
+password:null
+}
+  constructor() { 
+    this.con.nombre = localStorage.getItem('nombre');
+  }
 
   ngOnInit(): void {
   }
+
+aceptar(){
+    alert('Viaje aceptado con exito');
+ }
+
+negar(){
+  alert('Viaje cancelado con exito');
+}
 
 }

@@ -23,6 +23,7 @@ import {TokenInterceptorService} from './service/token-interceptor.service'
 import {AuthGuard} from './auth.guard';
 import { ConductorComponent } from './components/conductor/conductor.component';
 import { UsuarioAventonComponent } from './components/usuario-aventon/usuario-aventon.component';
+import { ComponentsComponent } from './altacon/components/components.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { UsuarioAventonComponent } from './components/usuario-aventon/usuario-av
     LoginComponent,
     ConductorComponent,
     UsuarioAventonComponent,
+    ComponentsComponent,
   ],
   imports: [
     BrowserModule,

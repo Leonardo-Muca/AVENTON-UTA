@@ -9,6 +9,9 @@ export class SusuariosService {
   url = environment.url + '/usuario';
   url2 = environment.url + '/modificarusuario';
   url3 = environment.url + '/login';
+  url4= environment.url + '/conductor'
+  
+  
 
   constructor(private http: HttpClient) { }
 
@@ -16,8 +19,16 @@ export class SusuariosService {
     return this.http.get(this.url).toPromise();
   }
 
+  recuperarconductor() {
+    return this.http.get(this.url4).toPromise();
+  }
+
   altauser(usuario) {
     return this.http.post(this.url, usuario).toPromise();
+  }
+
+  altacon(usuario) {
+    return this.http.post(this.url4, usuario).toPromise();
   }
 
   obtenerusuarioID(id) {
